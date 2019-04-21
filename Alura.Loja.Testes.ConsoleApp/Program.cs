@@ -16,7 +16,7 @@ namespace Alura.Loja.Testes.ConsoleApp
         {
             var fulano = new Cliente();
             fulano.Nome = "Fulaninho de Tal";
-            fulano.EndereçoDeEntrega = new Endereco()
+            fulano.EnderecoDeEntrega = new Endereco()
             {
                 Numero = 12,
                 Logradouro = "Rua dos Inválidos",
@@ -27,6 +27,10 @@ namespace Alura.Loja.Testes.ConsoleApp
 
             using (var contexto = new LojaContext())
             {
+                var serviceProvider = contexto.GetInfrastructure<IServiceProvider>();
+                var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
+                loggerFactory.AddProvider(SqlLoggerProvider.Create());
+
                 contexto.Clientes.Add(fulano);
                 contexto.SaveChanges();
             }

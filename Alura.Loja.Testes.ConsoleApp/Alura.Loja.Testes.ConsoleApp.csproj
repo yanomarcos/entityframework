@@ -190,6 +190,10 @@
     <Compile Include="Migrations\20190420135314_Promocao.designer.cs">
       <DependentUpon>20190420135314_Promocao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20190421020149_Cliente.cs" />
+    <Compile Include="Migrations\20190421020149_Cliente.designer.cs">
+      <DependentUpon>20190421020149_Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LojaContextModelSnapshot.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="ProdutoDAOEntity.cs" />
